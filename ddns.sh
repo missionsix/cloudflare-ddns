@@ -1,6 +1,9 @@
 #!/usr/bin/bash
 
-export WORKDIR=/data/dev/ddns
+if ! [[ -v WORKDIR ]]; then
+    export WORKDIR=.
+fi
+
 
 # Load environment variables from .env file if it exists
 if [ -f $WORKDIR/.env ]; then
